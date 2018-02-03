@@ -1,0 +1,25 @@
+body{
+  background: #24a6d6;
+  padding: 15px;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col-4{
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+.container{
+  max-width: 500px;
+  margin: 0px auto;
+}
+img{
+  width:100%;
+  cursor: pointer;
+}

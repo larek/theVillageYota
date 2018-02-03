@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="70mm" height="50mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 7000 5000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#26BCEF;stroke-width:100}
+    .str1 {stroke:#FEFEFE;stroke-width:150}
+    .fil4 {fill:none}
+    .fil2 {fill:none;fill-rule:nonzero}
+    .fil3 {fill:#FEFEFE}
+    .fil0 {fill:#00A6D6}
+    .fil1 {fill:url(#id0)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="4385.46" y1="1172.31" x2="2614.53" y2="3827.69">
+   <stop offset="0" style="stop-opacity:1; stop-color:#7D3F8F"/>
+   <stop offset="0.439216" style="stop-opacity:1; stop-color:#E51E4D"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F4B54B"/>
+  </linearGradient>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_934433133952">
+   <path class="fil0 str0" d="M749 148l5502 0c247,0 450,203 450,451l0 3802c0,248 -203,451 -450,451l-5502 0c-247,0 -450,-203 -450,-451l0 -3802c0,-248 203,-451 450,-451z"/>
+   <path class="fil1" d="M3500 945c859,0 1555,696 1555,1555 0,859 -696,1555 -1555,1555 -859,0 -1555,-696 -1555,-1555 0,-859 696,-1555 1555,-1555l0 0z"/>
+   <path class="fil2 str1" d="M3348 1639l304 0c390,0 709,319 709,709l0 304c0,390 -319,709 -709,709l-304 0c-390,0 -709,-319 -709,-709l0 -304c0,-390 319,-709 709,-709z"/>
+   <path class="fil3" d="M3999 1897c60,0 109,48 109,108 0,60 -49,108 -109,108 -59,0 -108,-48 -108,-108 0,-60 49,-108 108,-108z"/>
+   <path class="fil4 str1" d="M3500 2069c238,0 431,193 431,431 0,238 -193,431 -431,431 -238,0 -431,-193 -431,-431 0,-238 193,-431 431,-431z"/>
+  </g>
+ </g>
+</svg>

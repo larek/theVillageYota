@@ -29,7 +29,7 @@ class App extends React.Component{
       this.audio[item.slug] = new Audio();
       this.audio[item.slug].loop = true;
       this.audio[item.slug].preload = true;
-      this.audio[item.slug].src = '/audio/' + item.audio;
+      this.audio[item.slug].src = './audio/' + item.audio;
     });
   }
 

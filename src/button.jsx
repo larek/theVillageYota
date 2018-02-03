@@ -10,7 +10,7 @@ export default class Button extends React.Component{
         <img 
           src={this.props.state[this.props.slug] ? '/images/' + this.props.back : '/images/' + this.props.front} 
           data-slug={this.props.slug}
-          onClick={this.props.toggle} 
+          onMouseDown={this.props.toggle} 
         />
       )
   }

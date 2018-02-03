@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import data from './data.js';
+import Button from './button.jsx';
 
 class App extends React.Component{
   constructor(props){
@@ -53,92 +54,103 @@ class App extends React.Component{
       <div>
           <div className="row">
             <div className="col-4">
-                <img 
-                  src={this.state.vk ? '/images/vk-back-1.svg' : '/images/vk-front-1.svg'} 
-                  data-slug='vk'
-                  onClick={this.toggle} 
-                  alt="Vkontakte"
-                />
+              <Button 
+                front='vk-front-1.svg' 
+                back='vk-back-1.svg' 
+                slug='vk' 
+                toggle={this.toggle} 
+                state={this.state} 
+              />
             </div>
             <div className="col-4">
-                <img 
-                  src={this.state.insta ? '/images/insta-back-1.svg' : '/images/insta-front-1.svg'} 
-                  data-slug='insta'
-                  onClick={this.toggle} 
-                  alt="Instagram"
-                />
+              <Button 
+                front='insta-front-1.svg'
+                back='insta-back-1.svg'
+                slug='insta'
+                toggle={this.toggle}
+                state={this.state} 
+              />
             </div>
             <div className="col-4">
-                <img 
-                  src={this.state.fb ? '/images/fb-back-1.svg' : '/images/fb-front-1.svg'} 
-                  data-slug='fb'
-                  onClick={this.toggle} 
-                  alt="Facebook"
-                />
+              <Button 
+                front='fb-front-1.svg'
+                back='fb-back-1.svg'
+                slug='fb'
+                toggle={this.toggle}
+                state={this.state} 
+              />
             </div>
           </div>
           <div className="row">
               <div className="col-4">
-                  <img 
-                    src={this.state.youtube ? '/images/youtube-back-1.svg' : '/images/youtube-front-1.svg'} 
-                    data-slug='youtube'
-                    onClick={this.toggle}
-                    alt="Youtube"
-                  />
-                  <img 
-                    src={this.state.viber ? '/images/viber.svg' : '/images/viber-front-1.svg'} 
-                    data-slug='viber'
-                    onClick={this.toggle}
-                    alt="Viber"
-                  />
+                <Button 
+                  front='youtube-front-1.svg'
+                  back='youtube-back-1.svg'
+                  slug='youtube'
+                  toggle={this.toggle}
+                  state={this.state} 
+                />
+                <Button 
+                  front='viber-front-1.svg'
+                  back='viber.svg'
+                  slug='viber'
+                  toggle={this.toggle}
+                  state={this.state} 
+                />
               </div> 
               <div className="col-4">
-                  <img 
-                    src={this.state.yota ? '/images/yota-back-1.svg' : '/images/yota-front-1.svg'} 
-                    data-slug='yota'
-                    onClick={this.toggle}
-                    alt="Yota"
-                  />
+                <Button 
+                  front='yota-front-1.svg'
+                  back='yota-back-1.svg'
+                  slug='yota'
+                  toggle={this.toggle}
+                  state={this.state} 
+                />
               </div>
               <div className="col-4">
-                  <img 
-                    src={this.state.whatsapp ? '/images/whatsapp-back-1.svg' : '/images/whatsapp-front-1.svg'} 
-                    data-slug='whatsapp'
-                    onClick={this.toggle}
-                    alt="Whatsapp"
-                  />
-                  <img 
-                    src={this.state.twitter ? '/images/twitter-back-1.svg' : '/images/twitter-front-1.svg'} 
-                    data-slug='twitter'
-                    onClick={this.toggle}
-                    alt="Twitter"
-                  />
+                <Button 
+                    front='whatsapp-front-1.svg'
+                    back='whatsapp-back-1.svg'
+                    slug='whatsapp'
+                    toggle={this.toggle}
+                    state={this.state} 
+                />
+                <Button 
+                    front='twitter-front-1.svg'
+                    back='twitter-back-1.svg'
+                    slug='twitter'
+                    toggle={this.toggle}
+                    state={this.state} 
+                />
               </div> 
           </div>
           <div className="row">
             <div className="col-4">
-                <img 
-                  src={this.state.telegram ? '/images/telegram-back-1.svg' : '/images/telegram-front-1.svg'} 
-                  data-slug='telegram'
-                  onClick={this.toggle} 
-                  alt="Telegram"
-                />
+              <Button 
+                front='telegram-front-1.svg'
+                back='telegram-back-1.svg'
+                slug='telegram'
+                toggle={this.toggle}
+                state={this.state} 
+              />
             </div>
             <div className="col-4">
-                <img 
-                  src={this.state.ok ? '/images/ok-back-1.svg' : '/images/ok-front-1.svg'} 
-                  data-slug='ok'
-                  onClick={this.toggle} 
-                  alt="Odnoklassniki"
-                />
+              <Button 
+                front='ok-front-1.svg'
+                back='ok-back-1.svg'
+                slug='ok'
+                toggle={this.toggle}
+                state={this.state} 
+              />
             </div>
             <div className="col-4">
-                <img 
-                  src={this.state.skype ? '/images/skype-back-1.svg' : '/images/skype-front-1.svg'} 
-                  data-slug='skype'
-                  onClick={this.toggle} 
-                  alt="Skype"
-                />
+              <Button 
+                front='skype-front-1.svg'
+                back='skype-back-1.svg'
+                slug='skype'
+                toggle={this.toggle}
+                state={this.state} 
+              />
             </div>
           </div>
       </div>

@@ -100,8 +100,8 @@ class App extends React.Component{
           </div> 
           <div className="col-4">
             <Button 
-              front='yota-front-1.svg'
-              back='yota-back-1.svg'
+              front='yota-front-2.svg'
+              back='yota-back-2.svg'
               slug='yota'
               toggle={this.toggle}
               state={this.state} 

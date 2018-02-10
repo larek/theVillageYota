@@ -62,7 +62,6 @@ class App extends React.Component{
       this.source[slug].buffer = this.audioData[slug];
       this.source[slug].connect(this.ctx.destination);
       this.source[slug].loop = true;
-      // this.source[slug].loopEnd = this.audioData[slug].duration - this.loopEnd[slug];
       this.source[slug].loopEnd = 4;
       this.source[slug].start(this.ctx.currentTime);
     }

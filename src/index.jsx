@@ -11,7 +11,6 @@ class App extends React.Component{
     this.ctx = new audioContext();
     this.source = {};
     this.audioData = {};
-    this.loopEnd = {};
     this.toggle = this.toggle.bind(this);
     this.state = {
       fb: false,
@@ -33,7 +32,6 @@ class App extends React.Component{
     let _this = this;
     this.props.data.forEach(item => {
       this.getAudio('./audio/' + item.audio, r => {
-          _this.loopEnd[item.slug] = item.loopEnd;
           _this.ctx.decodeAudioData(r, response => {
             _this.audioData[item.slug] = response;
           })

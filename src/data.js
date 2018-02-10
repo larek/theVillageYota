@@ -1,46 +1,57 @@
 export default [
   {
     slug: 'fb',
-    audio: 'facebook.mp3'
+    audio: 'facebook-2.mp3',
+    loopEnd: 0,
   },
   {
     slug: 'insta',
-    audio: 'inst.mp3',
+    audio: 'inst-2.mp3',
+    loopEnd: 0,
   },
   {
     slug: 'vk',
-    audio: 'vk.mp3'
+    audio: 'vk-2.mp3',
+    loopEnd: 0.02,
   },
   {
     slug: 'skype',
-    audio: 'skype.mp3'
+    audio: 'skype-2.mp3',
+    loopEnd: 0,
   },
   {
     slug: 'youtube',
-    audio: 'viber.mp3'
+    audio: 'youtube.mp3',
+    loopEnd: 0,
   },
   {
     slug: 'viber',
-    audio: 'viber.mp3'
+    audio: 'viber-2.mp3',
+    loopEnd: 0,
   },
   {
     slug: 'yota',
-    audio: 'back.mp3'
+    audio: 'back-2.mp3',
+    loopEnd: 0.045,
   },
   {
     slug: 'whatsapp',
-    audio: 'whatsapp.mp3'
+    audio: 'whatsapp-2.mp3',
+    loopEnd: 0,
   },
   {
     slug: 'twitter',
-    audio: 'whatsapp.mp3'
+    audio: 'twitter-2.mp3',
+    loopEnd: 0,
   },
   {
     slug: 'telegram',
-    audio: 'telegram.mp3'
+    audio: 'telegram-2.mp3',
+    loopEnd: 0,
   },
   {
     slug: 'ok',
-    audio: 'ok.mp3'
+    audio: 'ok-2.mp3',
+    loopEnd: 0,
   }
 ];

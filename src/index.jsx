@@ -6,6 +6,12 @@ import Button from './button.jsx';
 class App extends React.Component{
   constructor(props){
     super(props);
+
+    let audioContext = window.AudioContext || window.webkitAudioContext;
+    this.ctx = new audioContext();
+    this.source = {};
+    this.audioData = {};
+    this.loopEnd = {};
     this.toggle = this.toggle.bind(this);
     this.state = {
       fb: false,
@@ -24,29 +30,51 @@ class App extends React.Component{
   }
 
   componentDidMount(){
-    this.audio = [];
+    let _this = this;
     this.props.data.forEach(item => {
-      this.audio[item.slug] = new Audio();
-      this.audio[item.slug].loop = true;
-      this.audio[item.slug].preload = true;
-      this.audio[item.slug].src = './audio/' + item.audio;
+      this.getAudio('./audio/' + item.audio, r => {
+          _this.loopEnd[item.slug] = item.loopEnd;
+          _this.ctx.decodeAudioData(r, response => {
+            _this.audioData[item.slug] = response;
+          })
+      });
     });
+  }
+
+  getAudio(src, callback){
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', src, true);
+    xhr.responseType = 'arraybuffer';
+    xhr.send(null);
+    xhr.onload = r => {
+      callback(r.currentTarget.response);
+    }
   }
 
 
   toggle(e){
-
     let slug = e.target.dataset.slug;
     if(this.state[slug]){
-      this.audio[slug].pause();
-      this.audio[slug].currentTime = 0;
+      this.source[slug].disconnect(this.ctx.destination);
+      this.source[slug] = null;
     }else{
-      this.audio[slug].play();
+      this.source[slug] = this.ctx.createBufferSource();
+      this.source[slug].buffer = this.audioData[slug];
+      this.source[slug].connect(this.ctx.destination);
+      this.source[slug].loop = true;
+      // this.source[slug].loopEnd = this.audioData[slug].duration - this.loopEnd[slug];
+      this.source[slug].loopEnd = 4;
+      this.source[slug].start(this.ctx.currentTime);
     }
 
     this.setState({
       [slug]: !this.state[slug]
     });
+  }
+
+  changeRate(e){
+    let slug = e.target.dataset.slug;
+    this.source[slug].playbackRate.value = e.target.value;
   }
 
   render(){

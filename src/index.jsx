@@ -24,11 +24,23 @@ class App extends React.Component{
       whatsapp: false,
       twitter: false,
       ok: false,
+      images: false,
     };
     
   }
 
+  componentWillUpdate(nextProps, nextState){
+    nextState.images ? document.getElementById('preloadSpinner').style.display = 'none' : false;
+  }
+
   componentDidMount(){
+
+    this.imagesDidLoaded(() => {
+      this.setState({
+        images: true,
+      })
+    });
+
     let _this = this;
     this.props.data.forEach(item => {
       this.getAudio('./audio/' + item.audio, r => {
@@ -39,12 +51,26 @@ class App extends React.Component{
     });
   }
 
+  imagesDidLoaded(callback){
+    let loadedImages = 0,
+        images = document.images;
+    for (var i = 0; i < images.length; i++) {
+      images[i].onload = () => {
+        loadedImages++;
+        if(loadedImages == 22){
+          callback(true)
+        }
+      }
+    }
+  }
+
   getAudio(src, callback){
     let xhr = new XMLHttpRequest();
     xhr.open('GET', src, true);
     xhr.responseType = 'arraybuffer';
     xhr.send(null);
     xhr.onload = r => {
+      console.log(r.currentTarget.status);
       callback(r.currentTarget.response);
     }
   }
@@ -77,105 +103,107 @@ class App extends React.Component{
   render(){
     return(
       <div>
-        <div className="row">
-          <div className="col-4">
-            <Button 
-              front='vk-front-1.svg' 
-              back='vk-back-1.svg' 
-              slug='vk' 
-              toggle={this.toggle} 
-              state={this.state} 
-            />
+        <div style={{display: this.state.images ? 'block' : 'none'}}>
+          <div className="row">
+            <div className="col-4">
+              <Button 
+                front='vk-front-1.svg' 
+                back='vk-back-1.svg' 
+                slug='vk' 
+                toggle={this.toggle} 
+                state={this.state} 
+              />
+            </div>
+            <div className="col-4">
+              <Button 
+                front='insta-front-1.svg'
+                back='insta-back-1.svg'
+                slug='insta'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+            </div>
+            <div className="col-4">
+              <Button 
+                front='fb-front-1.svg'
+                back='fb-back-1.svg'
+                slug='fb'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+            </div>
           </div>
-          <div className="col-4">
-            <Button 
-              front='insta-front-1.svg'
-              back='insta-back-1.svg'
-              slug='insta'
-              toggle={this.toggle}
-              state={this.state} 
-            />
+          <div className="row">
+            <div className="col-4">
+              <Button 
+                front='youtube-front-1.svg'
+                back='youtube-back-1.svg'
+                slug='youtube'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+              <Button 
+                front='viber-front-1.svg'
+                back='viber.svg'
+                slug='viber'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+            </div> 
+            <div className="col-4">
+              <Button 
+                front='yota-front-2.svg'
+                back='yota-back-2.svg'
+                slug='yota'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+            </div>
+            <div className="col-4">
+              <Button 
+                front='whatsapp-front-1.svg'
+                back='whatsapp-back-1.svg'
+                slug='whatsapp'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+              <Button 
+                front='twitter-front-1.svg'
+                back='twitter-back-1.svg'
+                slug='twitter'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+            </div> 
           </div>
-          <div className="col-4">
-            <Button 
-              front='fb-front-1.svg'
-              back='fb-back-1.svg'
-              slug='fb'
-              toggle={this.toggle}
-              state={this.state} 
-            />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-4">
-            <Button 
-              front='youtube-front-1.svg'
-              back='youtube-back-1.svg'
-              slug='youtube'
-              toggle={this.toggle}
-              state={this.state} 
-            />
-            <Button 
-              front='viber-front-1.svg'
-              back='viber.svg'
-              slug='viber'
-              toggle={this.toggle}
-              state={this.state} 
-            />
-          </div> 
-          <div className="col-4">
-            <Button 
-              front='yota-front-2.svg'
-              back='yota-back-2.svg'
-              slug='yota'
-              toggle={this.toggle}
-              state={this.state} 
-            />
-          </div>
-          <div className="col-4">
-            <Button 
-              front='whatsapp-front-1.svg'
-              back='whatsapp-back-1.svg'
-              slug='whatsapp'
-              toggle={this.toggle}
-              state={this.state} 
-            />
-            <Button 
-              front='twitter-front-1.svg'
-              back='twitter-back-1.svg'
-              slug='twitter'
-              toggle={this.toggle}
-              state={this.state} 
-            />
-          </div> 
-        </div>
-        <div className="row">
-          <div className="col-4">
-            <Button 
-              front='telegram-front-1.svg'
-              back='telegram-back-1.svg'
-              slug='telegram'
-              toggle={this.toggle}
-              state={this.state} 
-            />
-          </div>
-          <div className="col-4">
-            <Button 
-              front='ok-front-1.svg'
-              back='ok-back-1.svg'
-              slug='ok'
-              toggle={this.toggle}
-              state={this.state} 
-            />
-          </div>
-          <div className="col-4">
-            <Button 
-              front='skype-front-1.svg'
-              back='skype-back-1.svg'
-              slug='skype'
-              toggle={this.toggle}
-              state={this.state} 
-            />
+          <div className="row">
+            <div className="col-4">
+              <Button 
+                front='telegram-front-1.svg'
+                back='telegram-back-1.svg'
+                slug='telegram'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+            </div>
+            <div className="col-4">
+              <Button 
+                front='ok-front-1.svg'
+                back='ok-back-1.svg'
+                slug='ok'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+            </div>
+            <div className="col-4">
+              <Button 
+                front='skype-front-1.svg'
+                back='skype-back-1.svg'
+                slug='skype'
+                toggle={this.toggle}
+                state={this.state} 
+              />
+            </div>
           </div>
         </div>
       </div>

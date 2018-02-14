@@ -43,7 +43,7 @@ class App extends React.Component{
 
     let _this = this;
     this.props.data.forEach(item => {
-      this.getAudio('./audio/' + item.audio, r => {
+      this.getAudio('http://reports.larek.pro/theVillageYota/public/audio/' + item.audio, r => {
           _this.ctx.decodeAudioData(r, response => {
             _this.audioData[item.slug] = response;
           })
@@ -70,7 +70,6 @@ class App extends React.Component{
     xhr.responseType = 'arraybuffer';
     xhr.send(null);
     xhr.onload = r => {
-      console.log(r.currentTarget.status);
       callback(r.currentTarget.response);
     }
   }

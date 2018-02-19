@@ -1,25 +1,27 @@
 body{
-  background: #24a6d6;
+  background: #24a6d6!important;
   padding: 15px;
 }
-.row {
+.pad__row {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  baclground: transparent;
 }
 .col-4{
   -ms-flex: 0 0 33.333333%;
   flex: 0 0 33.333333%;
   max-width: 33.333333%;
 }
-.container{
+.pad__container{
   max-width: 500px;
   margin: 0px auto;
+  padding: 30px 0px;
 }
-img{
+.pad__container img{
   width:100%;
   cursor: pointer;
 }
@@ -77,4 +79,13 @@ img{
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   }
+}
+
+/* Reset global style */
+.stk-post.stk-layout_4 {
+    width: unset!important;
+    background: #24a6d6!important;
+}
+section.page-holder {
+    box-shadow: unset!important;
 }

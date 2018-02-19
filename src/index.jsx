@@ -103,7 +103,7 @@ class App extends React.Component{
     return(
       <div>
         <div style={{display: this.state.images ? 'block' : 'none'}}>
-          <div className="row">
+          <div className="pad__row">
             <div className="col-4">
               <Button 
                 front='vk-front-1.svg' 
@@ -132,7 +132,7 @@ class App extends React.Component{
               />
             </div>
           </div>
-          <div className="row">
+          <div className="pad__row">
             <div className="col-4">
               <Button 
                 front='youtube-front-1.svg'
@@ -175,7 +175,7 @@ class App extends React.Component{
               />
             </div> 
           </div>
-          <div className="row">
+          <div className="pad__row">
             <div className="col-4">
               <Button 
                 front='telegram-front-1.svg'

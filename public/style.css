@@ -81,7 +81,7 @@ body{
 }
 
 /* Reset global style */
-.stk-post.stk-layout_4, .stk-post.stk-layout_4 {
+.stk-post.stk-layout_4, .stk-post.stk-layout_6 {
     width: unset!important;
     background: #24a6d6!important;
     padding: 0px!important;

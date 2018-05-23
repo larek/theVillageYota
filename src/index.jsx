@@ -43,7 +43,7 @@ class App extends React.Component{
 
     let _this = this;
     this.props.data.forEach(item => {
-      this.getAudio('http://reports.larek.pro/theVillageYota/public/audio/' + item.audio, r => {
+      this.getAudio('https://the-village-yota.ru/audio/' + item.audio, r => {
           _this.ctx.decodeAudioData(r, response => {
             _this.audioData[item.slug] = response;
           })

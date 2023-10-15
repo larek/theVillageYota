@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import data from './data.js';
 import Button from './button.jsx';
+import "./style.css";
 
 class App extends React.Component{
   constructor(props){
@@ -43,7 +44,7 @@ class App extends React.Component{
 
     let _this = this;
     this.props.data.forEach(item => {
-      this.getAudio('https://the-village-yota.ru/audio/' + item.audio, r => {
+      this.getAudio('/audio/' + item.audio, r => {
           _this.ctx.decodeAudioData(r, response => {
             _this.audioData[item.slug] = response;
           })

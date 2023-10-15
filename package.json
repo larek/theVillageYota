@@ -1,23 +1,21 @@
 {
-  "name": "theVilageYota",
-  "version": "1.0.0",
+  "name": "theVillageYota",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p"
+    "dev": "vite",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "eslint": "^4.17.0",
-    "eslint-plugin-react": "^7.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^4.4.11"
+  },
+  "engines" : { 
+    "node" : "18"
   }
 }
